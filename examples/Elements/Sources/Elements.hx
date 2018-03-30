@@ -1,7 +1,7 @@
 package;
 import kha.Framebuffer;
 import kha.Assets;
-import zux.*;
+import zui.*;
 
 class Elements {
 	var ui: Zui;
