@@ -19,7 +19,6 @@
 |`[-]`| scrollbar disappears when mouse outs                                      |    
 
 #### Credits
-
 [zui by Lubolenco](https://github.com/armory3d/zui)
 
 ---------------------------
