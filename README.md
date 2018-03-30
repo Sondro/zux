@@ -12,10 +12,10 @@
 | --- | ------------------------------------------------------------------------- |
 |`[-]`| textInput backspace/delete doesn't work after spamming input              |
 |`[-]`| refresh causes textInput spam on key press (html5)                        |
-| --- | ------------------------------------------------------------------------- |
+|     |                                                                           |
 |`[-]`| file browser labels fly to the left during enter/click events (electron)  |
 |`[-]`| file browser stops filling/coloring appearing black/clear                 |    
-| --- | ------------------------------------------------------------------------- |
+|     |                                                                           |
 |`[-]`| scrollbar disappears when mouse outs                                      |    
 
 #### Credits
