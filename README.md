@@ -8,6 +8,7 @@
 |`[+]`| Fix panel scrolling when using textInputMulti                  |
 
 ### Bugs:
+|     |                                                                           |
 | --- | ------------------------------------------------------------------------- |
 |`[-]`| textInput backspace/delete doesn't work after spamming input              |
 |`[-]`| refresh causes textInput spam on key press (html5)                        |
