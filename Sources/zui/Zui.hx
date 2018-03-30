@@ -655,7 +655,7 @@ class Zui {
 		public function textInputMulti(handle: Handle, lines = 2, grow = false, label = "", align:Align = Left, asFloat = false): String {
 		if (!isVisible(ELEMENT_H())) { endElement(); return handle.text; }
 	
-		trace(ops.scaleFactor);
+		//trace(ops.scaleFactor);
 
 		// save height
 		var oldHeight = t.ELEMENT_H; 
@@ -666,7 +666,8 @@ class Zui {
 		// draw resized
 		drawRect(g, t.FILL_ACCENT_BG, _x + buttonOffsetY, _y + buttonOffsetY, _w - buttonOffsetY * 2,
 		        //((((ELEMENT_H() - ELEMENT_OFFSET()) * lines) - ELEMENT_OFFSET()) * ops.scaleFactor));
-		        ((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET) * ops.scaleFactor));
+		        //((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET) * ops.scaleFactor));
+		        ((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET)));
 
 		var startEdit = getReleased() || tabPressed;
 
@@ -676,8 +677,9 @@ class Zui {
 		else { handle.changed = false; }
 
 		// resize for placement
-		t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET) * ops.scaleFactor), Int);
+		//t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET) * ops.scaleFactor), Int);
 		//t.ELEMENT_H = cast(((((ELEMENT_H() - ELEMENT_OFFSET()) * lines) + ELEMENT_OFFSET()) * ops.scaleFactor), Int);
+		t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET)), Int);
 
 		if (label != "") {
 			g.color = t.LABEL_COL; // Label

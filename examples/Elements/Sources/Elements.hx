@@ -16,6 +16,8 @@ class Elements {
 //var scale = 0.5;
 var scale = 1;
 //var scale = 1.25;
+//var scale = 1.5;
+//var scale = 2;
 
 	function loadingFinished() {
 		initialized = true;
