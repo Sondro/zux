@@ -655,18 +655,18 @@ class Zui {
 		public function textInputMulti(handle: Handle, lines = 2, grow = false, label = "", align:Align = Left, asFloat = false): String {
 		if (!isVisible(ELEMENT_H())) { endElement(); return handle.text; }
 	
+		trace(ops.scaleFactor);
+
 		// save height
 		var oldHeight = t.ELEMENT_H; 
 
 		var hover = getHover();
 		g.color = hover ? t.ACCENT_HOVER_COL : t.ACCENT_COL; // Text bg
-trace(scale);
-trace(scaleFactor);
-trace("asdfasdfasdf");
 
 		// draw resized
 		drawRect(g, t.FILL_ACCENT_BG, _x + buttonOffsetY, _y + buttonOffsetY, _w - buttonOffsetY * 2,
-		        (((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET) * scaleFactor);
+		        //((((ELEMENT_H() - ELEMENT_OFFSET()) * lines) - ELEMENT_OFFSET()) * ops.scaleFactor));
+		        ((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET) * ops.scaleFactor));
 
 		var startEdit = getReleased() || tabPressed;
 
@@ -676,8 +676,9 @@ trace("asdfasdfasdf");
 		else { handle.changed = false; }
 
 		// resize for placement
-		t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET) * scaleFactor), Int);
-			
+		t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET) * ops.scaleFactor), Int);
+		//t.ELEMENT_H = cast(((((ELEMENT_H() - ELEMENT_OFFSET()) * lines) + ELEMENT_OFFSET()) * ops.scaleFactor), Int);
+
 		if (label != "") {
 			g.color = t.LABEL_COL; // Label
 			var labelAlign = align == Right ? Left : Right;
