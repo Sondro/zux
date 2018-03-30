@@ -37,7 +37,7 @@ var scale = 1.25;
 				ui.indent();
 				ui.text("Text");
 				ui.textInput(Id.handle({text: "Hello"}), "Input");
-				ui.textInputMulti(Id.handle({text: "Hello \n line2 \n line3"}), 12, "InputMulti");
+				ui.textInputMulti(Id.handle({text: "Line1 \n line2 \n line3"}), 12, "InputMulti");
 
 				ui.button("Button");
 				if (ui.isHovered) ui.tooltip("Tooltip Bubble!\nWith multi-line support!\nWoo!");
