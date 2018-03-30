@@ -13,8 +13,9 @@ class Elements {
 		itemList = ["Item 1", "Item 2", "Item 3"];
 	}
 
-//var scale = 1;
-var scale = 1.25;
+//var scale = 0.5;
+var scale = 1;
+//var scale = 1.25;
 
 	function loadingFinished() {
 		initialized = true;
@@ -37,7 +38,7 @@ var scale = 1.25;
 				ui.indent();
 				ui.text("Text");
 				ui.textInput(Id.handle({text: "Hello"}), "Input");
-				ui.textInputMulti(Id.handle({text: "Line1 \n line2 \n line3"}), 12, "InputMulti");
+				ui.textInputMulti(Id.handle({text: "Line1 \n Line2 \n Line3"}), 12, "InputMulti");
 
 				ui.button("Button");
 				if (ui.isHovered) ui.tooltip("Tooltip Bubble!\nWith multi-line support!\nWoo!");

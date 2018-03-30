@@ -660,14 +660,15 @@ class Zui {
 
 		var hover = getHover();
 		g.color = hover ? t.ACCENT_HOVER_COL : t.ACCENT_COL; // Text bg
+trace(scale);
+trace(scaleFactor);
+trace("asdfasdfasdf");
 
 		// draw resized
 		drawRect(g, t.FILL_ACCENT_BG, _x + buttonOffsetY, _y + buttonOffsetY, _w - buttonOffsetY * 2,
-		        ((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET);
+		        (((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) - t.ELEMENT_OFFSET) * scaleFactor);
 
 		var startEdit = getReleased() || tabPressed;
-				t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET)), Int);
-				t.ELEMENT_H = oldHeight;
 
 		if (textSelectedHandle != handle && startEdit) { startTextEdit(handle); }
 		if (textSelectedHandle == handle) { updateTextEdit(align, asFloat); }
@@ -675,8 +676,8 @@ class Zui {
 		else { handle.changed = false; }
 
 		// resize for placement
-		t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET)), Int);
-
+		t.ELEMENT_H = cast(((((t.ELEMENT_H - t.ELEMENT_OFFSET) * lines) + t.ELEMENT_OFFSET) * scaleFactor), Int);
+			
 		if (label != "") {
 			g.color = t.LABEL_COL; // Label
 			var labelAlign = align == Right ? Left : Right;
