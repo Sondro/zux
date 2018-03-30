@@ -21,13 +21,13 @@
 #### Credits
 [zui by Lubolenco](https://github.com/armory3d/zui)
 ---------------------------
-# ZUI:
+### ZUI:
 
 Portable immediate mode UI library designed for tooling and game debug. Built with Haxe and Kha. Check out live demo at [KodeGarden](http://kodegarden.org/#e199af106a797bafa301c3956ad6f1aea7929744).
 
 ![](img/zui.jpg)
 
-## Getting started
+##### Getting started
 - Clone into *your_kha_project/Libraries*
 - Add `project.addLibrary('zui');` into *khafile.js*
 ``` hx
@@ -53,7 +53,7 @@ Portable immediate mode UI library designed for tooling and game debug. Built wi
 	}
 ```
 
-## Elements
+##### Elements
 ``` hx
 function tab(id: Handle, text: String): Bool;
 function panel(id: Handle, text: String, accent = 1): Bool;
@@ -99,13 +99,13 @@ Canvas.hx - drawing custom layouts
 Canvas.draw(...); // See examples
 ```
 
-## Examples
+##### Examples
 Check out [examples/](https://github.com/armory3d/zui/tree/master/examples) folder. To run specific example, simply drop it's folder into [KodeStudio](https://github.com/KTXSoftware/KodeStudio/releases) and hit run. If you are having trouble compiling, clone latest [Kha](https://github.com/Kode/Kha) repository into your example folder (alongside the `khafile.js`). This will let KodeStudio pick up the most recent Kha.
 
-## Theming
+##### Theming
 Themes can be defined using TTheme typedef. Check zui.Themes class for example. Set ZuiOptions.theme when creating new Zui instance to overwrite default theme.
 
-## Snippets
+##### Snippets
 
 **Check element for changes**
 ```hx
@@ -162,7 +162,7 @@ var h3 = Id.handle({value: 1.0});
 var h4 = Id.handle({text: "Text"});
 ```
 
-## Custom integration
+##### Custom integration
 Using the powerful render target system of Kha, it is possible to easily integrate the library into any scenario. Set ZuiOptions.autoNotifyInput to false when creating a new Zui instance. You can then manually process the input and render the resulting texture in any way you may need.
 ``` hx
 zui.onMouseDown(button:Int, x:Int, y:Int)
